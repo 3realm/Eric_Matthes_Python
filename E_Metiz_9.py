@@ -17,6 +17,16 @@ class Restaurant(object):
         print("Open!")
 
 
+# 9-6
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name: str, cuisine_type: str):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ["vanilla", "chocolate"]
+
+    def describe_flavors(self):
+        print(self.flavors)
+
+
 # 9-3
 class User(object):
     def __init__(self, first_name: str, last_name: str, password: str, online: bool):
@@ -40,6 +50,16 @@ class User(object):
     def greet_user(self):
         print("Hi, User!")
 
+
+# 9-7
+class Admin(User):
+    def __init__(self, first_name: str, last_name: str, password: str, online: bool):
+        super().__init__(first_name, last_name, password, online)
+
+        self.privileges = ["«разрешено добавлять»", "«разрешено удалять»", "«разрешено банить»"]
+
+    def describe_privileges(self):
+        print(self.privileges)
 
 restaurant1 = Restaurant("KFC", "U-shaped kitchen")
 print(restaurant1.restaurant_name, restaurant1.cuisine_type)
@@ -68,6 +88,12 @@ print("number_served AFTER METHOD: ", restaurant1.number_served)
 # 9-5
 user1.increment_login_attempts()
 user1.increment_login_attempts()
-print("increment_method works: ",user1.login_attempts)
+print("increment_method works: ", user1.login_attempts)
 user1.reset_login_attempts()
-print("reset_method works: ",user1.login_attempts)
+print("reset_method works: ", user1.login_attempts)
+# 9-6
+ice = IceCreamStand("BR", "linear kitchen")
+ice.describe_flavors()
+# 9-7
+admin = Admin("OLga", "Boriakova", "asdf-AJdh-AKK8-La3i", True)
+admin.describe_privileges()
