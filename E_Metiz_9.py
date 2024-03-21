@@ -56,10 +56,19 @@ class Admin(User):
     def __init__(self, first_name: str, last_name: str, password: str, online: bool):
         super().__init__(first_name, last_name, password, online)
 
-        self.privileges = ["«разрешено добавлять»", "«разрешено удалять»", "«разрешено банить»"]
+        self.privileges = Privileges()
 
     def describe_privileges(self):
         print(self.privileges)
+
+
+# 9-8
+class Privileges(object):
+    def __init__(self):
+        self.privileges_l = ["«разрешено добавлять»", "«разрешено удалять»", "«разрешено банить»"]
+
+    def show_privileges_l(self):
+        print(self.privileges_l)
 
 restaurant1 = Restaurant("KFC", "U-shaped kitchen")
 print(restaurant1.restaurant_name, restaurant1.cuisine_type)
@@ -97,3 +106,6 @@ ice.describe_flavors()
 # 9-7
 admin = Admin("OLga", "Boriakova", "asdf-AJdh-AKK8-La3i", True)
 admin.describe_privileges()
+# 9-8
+admin_l = Admin("Sergei", "Boriakov", "asdf-AMdh-AKK8-La3i", True)
+admin_l.privileges.show_privileges_l()
