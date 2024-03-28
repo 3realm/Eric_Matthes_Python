@@ -1,3 +1,4 @@
+from random import randint
 # 9-1
 class Restaurant(object):
     def __init__(self, restaurant_name: str, cuisine_type: str):
@@ -70,6 +71,17 @@ class Privileges(object):
     def show_privileges_l(self):
         print(self.privileges_l)
 
+
+# 9-14
+class Die(object):
+    def __init__(self, sides: int = 6):
+        self.sides = sides
+
+    def roll_die(self) -> int:
+        return randint(1, self.sides)
+
+
+
 restaurant1 = Restaurant("KFC", "U-shaped kitchen")
 print(restaurant1.restaurant_name, restaurant1.cuisine_type)
 restaurant1.describe_restaurant()
@@ -109,3 +121,13 @@ admin.describe_privileges()
 # 9-8
 admin_l = Admin("Sergei", "Boriakov", "asdf-AMdh-AKK8-La3i", True)
 admin_l.privileges.show_privileges_l()
+# 9-10
+from my_restaurant import Myrestaurant
+
+restaurant11 = Myrestaurant("Lunasole", "U-shaped kitchen")
+restaurant11.describe_restaurant()
+# 9-14
+die1 = Die()
+print(die1.roll_die())
+die2 = Die(220)
+print(die2.roll_die())
