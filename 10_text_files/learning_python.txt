@@ -1,0 +1,7 @@
+- In Python you can… Easily create and manipulate lists, dictionaries, and sets
+- In Python you can… Define functions and classes to organize your code
+- In Python you can… Use control flow statements like if, else, and loops
+- In Python you can… Import and use modules to extend the functionality of your code
+- In Python you can… Handle exceptions and errors with try-except blocks
+- In Python you can… Work with files to read and write data
+- In Python you can… Use libraries and packages for specific tasks such as data analysis, web development, or machine learning
